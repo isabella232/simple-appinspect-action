@@ -5,10 +5,12 @@ runs:
   using: "composite"
   steps:
     - name: 'Make response directory'
+      shell: bash
       run: |
         mkdir response
         ls -la
     - name: 'Run Appinspect'
+      shell: bash
       run: |
         export ADDON_NAME=$(ls build/package/)
         echo ' --- Addon name is $ADDON_NAME'
