@@ -10,12 +10,16 @@ runs:
         mkdir response
         ls -la
     - name: 'Run Appinspect'
-      env:
-        USERNAME: ${{ secrets.SPL_COM_USER }}
-        PASSWORD: ${{ secrets.SPL_COM_PASSWORD }}
       uses: shell
       run: |
         export ADDON_NAME=$(ls build/package/)
         echo ' --- Addon name is $ADDON_NAME'
         pip install requests
-        python main.py "$SPL_COM_USER" "$SPL_COM_PASSWORD" "$ADDON_NAME"
+        python main.py "username" "password" "$ADDON_NAME"
+inputs:
+  username:
+    description: username for appinspect authentication
+    required: true
+  password:
+    description: password for appinspect authentication
+    required: true
