@@ -6,6 +6,6 @@ RUN pip install requests
 COPY run_appinspect.py /
 COPY entrypoint.sh /
 
-RUN ls /
 
+WORKDIR /github/workspace
 ENTRYPOINT ["bash", "/entrypoint.sh"]
