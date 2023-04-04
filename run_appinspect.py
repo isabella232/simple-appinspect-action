@@ -93,14 +93,17 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("username")
     parser.add_argument("password")
-    parser.add_argument("addon_path")
+    parser.add_argument("app_path")
     args = parser.parse_args()
 
     username = args.username
     password = args.password
-    addon_name = args.addon_name
+    app_path = args.app_path
 
-    build = Path(f"./artifacts/{addon_name}")
+    try:
+        build = Path(app_path)
+    except Exception as e:
+        print(e)
 
     sleep_time = 60
     timeout = 600

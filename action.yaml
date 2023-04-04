@@ -8,9 +8,10 @@ inputs:
   password:
     description: password for appinspect authentication
     required: true
-  path_to_addon:
+  app_path:
     description: path to addon
     required: true
+#    rename to "app_path"
 runs:
   using: "docker"
   image: Dockerfile
