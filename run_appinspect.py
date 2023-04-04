@@ -93,7 +93,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("username")
     parser.add_argument("password")
-    parser.add_argument("addon_name")
+    parser.add_argument("addon_path")
     args = parser.parse_args()
 
     username = args.username
