@@ -8,7 +8,4 @@ COPY entrypoint.sh /
 
 RUN ls /
 
-WORKDIR /github/workspace
-
-RUN ls /github/workspace
 ENTRYPOINT ["bash", "/entrypoint.sh"]
