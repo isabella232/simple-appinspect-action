@@ -3,7 +3,7 @@ FROM python:3.11
 
 RUN pip install requests
 
-COPY run_appinspect.py /
+COPY run_appinspect.py /github/workspace
 COPY entrypoint.sh /
 
 WORKDIR /github/workspace
