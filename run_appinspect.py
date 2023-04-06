@@ -100,6 +100,7 @@ if __name__ == "__main__":
     password = args.password
     app_path = args.app_path
 
+    build = Path(app_path)
 
     sleep_time = 60
     timeout = 600
