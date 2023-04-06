@@ -51,7 +51,7 @@ def submit_and_download_html(_token, _build, _payload):
 
     print(response.text)
 
-    download_html_report(token=_token, request_id=request_id, payload=_payload)
+    # download_html_report(token=_token, request_id=request_id, payload=_payload)
 
     return response.text
 
@@ -80,7 +80,7 @@ def download_html_report(token, request_id, payload):
         f.write(response.text)
 
 
-def main(username, password):
+def main(username, password, build):
     login_response = login(username, password)
     token = login_response.json()["data"]["token"]
     payloads = [{}, {"included_tags": "cloud"}, {"included_tags": "self-service"}]
@@ -100,12 +100,8 @@ if __name__ == "__main__":
     password = args.password
     app_path = args.app_path
 
-    try:
-        build = Path(app_path)
-    except Exception as e:
-        print(e)
 
     sleep_time = 60
     timeout = 600
 
-    main(username, password)
+    main(username, password, build)
